@@ -18,8 +18,7 @@ import java.time.LocalDateTime;
 public class Board {
 
     @Id
-    @GeneratedValue
-    private Long id;
+    private Long board_id;
 
     @Column(length = 20, nullable = false)
     private String writer;
@@ -30,6 +29,8 @@ public class Board {
     @Column(length = 1000, nullable = false)
     private String content;
 
+
+
     @CreatedDate
     @Column(updatable = false)
     private LocalDateTime posting_date;
@@ -38,8 +39,8 @@ public class Board {
     private LocalDateTime edit_date;
 
     @Builder
-    public Board(Long id, String writer, String title, String content) {
-        this.id = id;
+    public Board(Long board_id, String writer, String title, String content) {
+        this.board_id = board_id;
         this.writer = writer;
         this.title = title;
         this.content = content;
